@@ -1,0 +1,7 @@
+/**
+ * @preserve jed.js https://github.com/SlexAxton/Jed
+ */
+
+//! moment.js
+
+//! moment.js locale configuration
