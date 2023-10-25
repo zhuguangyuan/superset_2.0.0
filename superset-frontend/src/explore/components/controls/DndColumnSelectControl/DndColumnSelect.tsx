@@ -139,6 +139,7 @@ export function DndColumnSelect(props: DndColumnSelectProps) {
   const valuesRenderer = useCallback(
     () =>
       optionSelector.values.map((column, idx) =>
+        // 如果开启了 点击则弹出编辑面板 功能，则展示面板，否则只展示选择字段
         isFeatureEnabled(FeatureFlag.ENABLE_DND_WITH_CLICK_UX) ? (
           <ColumnSelectPopoverTrigger
             key={idx}
@@ -167,6 +168,7 @@ export function DndColumnSelect(props: DndColumnSelectProps) {
               withCaret
             />
           </ColumnSelectPopoverTrigger>
+        //   此处就是只展示选择字段组件
         ) : (
           <OptionWrapper
             key={idx}
