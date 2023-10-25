@@ -72,6 +72,11 @@ export class OptionSelector {
     this.values.splice(idx, 1);
   }
 
+  changeEnable(idx: number) {
+    console.log("change enable flag for column", idx);
+    // this.values[idx].label;
+  }
+
   replace(idx: number, value: QueryFormColumn) {
     if (this.values[idx]) {
       this.values[idx] = isPhysicalColumn(value) ? this.options[value] : value;

@@ -118,12 +118,17 @@ export default class AdhocFilter {
     }
     this.isExtra = !!adhocFilter.isExtra;
     this.isNew = !!adhocFilter.isNew;
+    this.isEnable = true;
 
     this.filterOptionName =
       adhocFilter.filterOptionName ||
       `filter_${Math.random().toString(36).substring(2, 15)}_${Math.random()
         .toString(36)
         .substring(2, 15)}`;
+  }
+
+  changeEnable() {
+    this.isEnable = !this.isEnable;
   }
 
   duplicateWith(nextFields) {

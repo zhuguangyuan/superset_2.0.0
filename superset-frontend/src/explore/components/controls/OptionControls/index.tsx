@@ -87,6 +87,13 @@ export const CloseContainer = styled.div`
   cursor: pointer;
 `;
 
+export const CheckContainer = styled.div`
+  height: 100%;
+  width: ${({ theme }) => theme.gridUnit * 6}px;
+  border-right: solid 1px ${({ theme }) => theme.colors.grayscale.dark2}0C;
+  cursor: pointer;
+`;
+
 const StyledInfoTooltipWithTrigger = styled(InfoTooltipWithTrigger)`
   margin: 0 ${({ theme }) => theme.gridUnit}px;
 `;

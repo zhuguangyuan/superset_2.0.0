@@ -33,6 +33,7 @@ interface BaseSimpleAdhocFilter {
   subject: string;
   timeGrain?: TimeGranularity;
   isExtra?: boolean;
+  isEnable?: boolean;
 }
 
 export type UnaryAdhocFilter = BaseSimpleAdhocFilter & {
@@ -58,6 +59,7 @@ export interface FreeFormAdhocFilter {
   expressionType: 'SQL';
   clause: 'WHERE' | 'HAVING';
   sqlExpression: string;
+  isEnable?: boolean;
 }
 
 export type AdhocFilter = SimpleAdhocFilter | FreeFormAdhocFilter;

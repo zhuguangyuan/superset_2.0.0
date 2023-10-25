@@ -40,6 +40,7 @@ const formDataMixedChart = {
       clause: 'WHERE',
       expressionType: 'SQL',
       sqlExpression: "foo in ('a', 'b')",
+      isEnable: true,
     } as FreeFormAdhocFilter,
   ],
   limit: 5,

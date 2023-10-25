@@ -28,9 +28,11 @@ export interface OptionProps {
   tooltipTitle?: string;
   column?: ColumnMeta | AdhocColumn;
   clickClose: (index: number) => void;
+  clickCheck: (index: number) => void;
   withCaret?: boolean;
   isExtra?: boolean;
   canDelete?: boolean;
+  isEnable?: boolean;
 }
 
 export interface OptionItemInterface {

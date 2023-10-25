@@ -23,7 +23,7 @@ import {
   CaretContainer,
   CloseContainer,
   OptionControlContainer,
-  Label,
+  Label, CheckContainer,
 } from 'src/explore/components/controls/OptionControls';
 import { OptionProps } from 'src/explore/components/controls/DndColumnSelectControl/types';
 import { InfoTooltipWithTrigger } from '@superset-ui/chart-controls';
@@ -36,9 +36,11 @@ export default function Option({
   children,
   index,
   clickClose,
+  clickCheck,
   withCaret,
   isExtra,
   canDelete = true,
+  isEnable = true,
 }: OptionProps) {
   const theme = useTheme();
   const onClickClose = useCallback(
@@ -48,6 +50,14 @@ export default function Option({
     },
     [clickClose, index],
   );
+  const onClickCheck = useCallback(
+    e => {
+      e.stopPropagation();
+      clickCheck(index);
+    },
+    [clickCheck, index],
+  );
+
   return (
     <OptionControlContainer data-test="option-label" withCaret={withCaret}>
       {canDelete && (
@@ -59,6 +69,16 @@ export default function Option({
           <Icons.XSmall iconColor={theme.colors.grayscale.light1} />
         </CloseContainer>
       )}
+
+      <CheckContainer
+        role="button"
+        data-test="remove-control-button"
+        onClick={onClickCheck}
+      >
+        {isEnable ?  <Icons.CheckboxOn iconColor={theme.colors.warning.light1} />
+        : <Icons.CheckboxOff iconColor={theme.colors.warning.light1} />}
+      </CheckContainer>
+
       <Label data-test="control-label">{children}</Label>
       {isExtra && (
         <StyledInfoTooltipWithTrigger

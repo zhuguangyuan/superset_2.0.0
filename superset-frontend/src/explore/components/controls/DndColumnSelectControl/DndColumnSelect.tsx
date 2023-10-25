@@ -118,6 +118,14 @@ export function DndColumnSelect(props: DndColumnSelectProps) {
     [onChange, optionSelector],
   );
 
+    const onClickCheck = useCallback(
+    (index: number) => {
+      optionSelector.changeEnable(index);
+      onChange(optionSelector.getValues());
+    },
+    [onChange, optionSelector],
+  );
+
   const onShiftOptions = useCallback(
     (dragIndex: number, hoverIndex: number) => {
       optionSelector.swap(dragIndex, hoverIndex);
@@ -150,6 +158,7 @@ export function DndColumnSelect(props: DndColumnSelectProps) {
               key={idx}
               index={idx}
               clickClose={onClickClose}
+              clickCheck={onClickCheck}
               onShiftOptions={onShiftOptions}
               type={`${DndItemType.ColumnOption}_${name}_${label}`}
               canDelete={canDelete}
@@ -162,6 +171,7 @@ export function DndColumnSelect(props: DndColumnSelectProps) {
             key={idx}
             index={idx}
             clickClose={onClickClose}
+            clickCheck={onClickCheck}
             onShiftOptions={onShiftOptions}
             type={`${DndItemType.ColumnOption}_${name}_${label}`}
             canDelete={canDelete}

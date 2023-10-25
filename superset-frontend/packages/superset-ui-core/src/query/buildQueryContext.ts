@@ -41,11 +41,18 @@ export default function buildQueryContext(
       }
     | BuildFinalQueryObjects,
 ): QueryContext {
+  const filteredFormData = { ...formData }; // Create a copy of formData
+  if (filteredFormData.adhoc_filters) {
+    filteredFormData.adhoc_filters = filteredFormData.adhoc_filters.filter(
+      (item) => item.isEnable
+    );
+  }
+
   const { queryFields, buildQuery = WRAP_IN_ARRAY } =
     typeof options === 'function'
       ? { buildQuery: options, queryFields: {} }
       : options || {};
-  const queries = buildQuery(buildQueryObject(formData, queryFields));
+  const queries = buildQuery(buildQueryObject(filteredFormData, queryFields));
   queries.forEach(query => {
     if (Array.isArray(query.post_processing)) {
       // eslint-disable-next-line no-param-reassign
@@ -53,11 +60,11 @@ export default function buildQueryContext(
     }
   });
   return {
-    datasource: new DatasourceKey(formData.datasource).toObject(),
-    force: formData.force || false,
+    datasource: new DatasourceKey(filteredFormData.datasource).toObject(),
+    force: filteredFormData.force || false,
     queries,
-    form_data: formData,
-    result_format: formData.result_format || 'json',
-    result_type: formData.result_type || 'full',
+    form_data: filteredFormData,
+    result_format: filteredFormData.result_format || 'json',
+    result_type: filteredFormData.result_type || 'full',
   };
 }

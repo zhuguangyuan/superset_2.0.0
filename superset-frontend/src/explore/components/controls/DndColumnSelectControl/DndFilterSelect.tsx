@@ -192,6 +192,16 @@ export const DndFilterSelect = (props: DndFilterSelectProps) => {
     [onChange, values],
   );
 
+  const onClickCheck = useCallback(
+    (index: number) => {
+      const valuesCopy = [...values];
+      valuesCopy[index].changeEnable();
+      setValues(valuesCopy);
+      onChange(valuesCopy);
+    },
+    [onChange, values],
+  );
+
   const onShiftOptions = useCallback(
     (dragIndex: number, hoverIndex: number) => {
       const newValues = [...values];
@@ -326,10 +336,12 @@ export const DndFilterSelect = (props: DndFilterSelectProps) => {
               label={label}
               tooltipTitle={tooltipTitle}
               clickClose={onClickClose}
+              clickCheck={onClickCheck}
               onShiftOptions={onShiftOptions}
               type={DndItemType.FilterOption}
               withCaret
               isExtra={adhocFilter.isExtra}
+              isEnable={adhocFilter.isEnable}
             />
           </AdhocFilterPopoverTrigger>
         );

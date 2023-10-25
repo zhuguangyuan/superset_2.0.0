@@ -55,9 +55,11 @@ export default function OptionWrapper(
     type,
     onShiftOptions,
     clickClose,
+    clickCheck,
     withCaret,
     isExtra,
     canDelete = true,
+    isEnable = true,
     ...rest
   } = props;
   const ref = useRef<HTMLDivElement>(null);
@@ -174,9 +176,11 @@ export default function OptionWrapper(
       <Option
         index={index}
         clickClose={clickClose}
+        clickCheck={clickCheck}
         withCaret={withCaret}
         isExtra={isExtra}
         canDelete={canDelete}
+        isEnable={isEnable}
       >
         <Label />
       </Option>

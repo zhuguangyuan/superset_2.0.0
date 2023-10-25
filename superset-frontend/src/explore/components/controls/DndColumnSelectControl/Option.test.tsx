@@ -23,7 +23,7 @@ import Option from 'src/explore/components/controls/DndColumnSelectControl/Optio
 
 test('renders with default props', () => {
   const { container } = render(
-    <Option index={1} clickClose={jest.fn()}>
+    <Option index={1} clickClose={jest.fn()} clickCheck={jest.fn()}>
       Option
     </Option>,
   );
@@ -36,7 +36,7 @@ test('renders with default props', () => {
 
 test('renders with caret', () => {
   render(
-    <Option index={1} clickClose={jest.fn()} withCaret>
+    <Option index={1} clickClose={jest.fn()} clickCheck={jest.fn()} withCaret>
       Option
     </Option>,
   );
@@ -46,7 +46,7 @@ test('renders with caret', () => {
 
 test('renders with extra triangle', () => {
   render(
-    <Option index={1} clickClose={jest.fn()} isExtra>
+    <Option index={1} clickClose={jest.fn()} clickCheck={jest.fn()} isExtra>
       Option
     </Option>,
   );
@@ -58,7 +58,7 @@ test('renders with extra triangle', () => {
 test('triggers onClose', () => {
   const clickClose = jest.fn();
   render(
-    <Option index={1} clickClose={clickClose}>
+    <Option index={1} clickClose={clickClose} clickCheck={jest.fn()}>
       Option
     </Option>,
   );

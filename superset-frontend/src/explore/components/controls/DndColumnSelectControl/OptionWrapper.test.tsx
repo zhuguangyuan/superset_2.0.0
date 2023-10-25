@@ -26,6 +26,7 @@ test('renders with default props', () => {
     <OptionWrapper
       index={1}
       clickClose={jest.fn()}
+      clickCheck={jest.fn()}
       type={'Column' as DndItemType}
       onShiftOptions={jest.fn()}
       label="Option"
@@ -43,6 +44,7 @@ test('triggers onShiftOptions on drop', () => {
       <OptionWrapper
         index={1}
         clickClose={jest.fn()}
+        clickCheck={jest.fn()}
         type={'Column' as DndItemType}
         onShiftOptions={onShiftOptions}
         label="Option 1"
@@ -50,6 +52,7 @@ test('triggers onShiftOptions on drop', () => {
       <OptionWrapper
         index={2}
         clickClose={jest.fn()}
+        clickCheck={jest.fn()}
         type={'Column' as DndItemType}
         onShiftOptions={onShiftOptions}
         label="Option 2"
