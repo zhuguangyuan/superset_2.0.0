@@ -342,6 +342,7 @@ export const DndFilterSelect = (props: DndFilterSelectProps) => {
               withCaret
               isExtra={adhocFilter.isExtra}
               isEnable={adhocFilter.isEnable}
+              needCheck={!!label}
             />
           </AdhocFilterPopoverTrigger>
         );

@@ -162,6 +162,7 @@ export function DndColumnSelect(props: DndColumnSelectProps) {
               onShiftOptions={onShiftOptions}
               type={`${DndItemType.ColumnOption}_${name}_${label}`}
               canDelete={canDelete}
+              needCheck={false}
               column={column}
               withCaret
             />
@@ -175,6 +176,7 @@ export function DndColumnSelect(props: DndColumnSelectProps) {
             onShiftOptions={onShiftOptions}
             type={`${DndItemType.ColumnOption}_${name}_${label}`}
             canDelete={canDelete}
+            needCheck={false}
             column={column}
           />
         ),

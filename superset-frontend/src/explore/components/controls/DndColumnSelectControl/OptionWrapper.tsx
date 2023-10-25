@@ -60,6 +60,7 @@ export default function OptionWrapper(
     isExtra,
     canDelete = true,
     isEnable = true,
+    needCheck = false,
     ...rest
   } = props;
   const ref = useRef<HTMLDivElement>(null);
@@ -181,6 +182,7 @@ export default function OptionWrapper(
         isExtra={isExtra}
         canDelete={canDelete}
         isEnable={isEnable}
+        needCheck={needCheck}
       >
         <Label />
       </Option>

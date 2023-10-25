@@ -12,10 +12,10 @@
     },
     "theme": {
       "css": [
-        "/static/assets/theme.124bf608c1000df4f51c.entry.css"
+        "/static/assets/theme.067c944970d7188eede9.entry.css"
       ],
       "js": [
-        "/static/assets/theme.124bf608c1000df4f51c.entry.js"
+        "/static/assets/theme.067c944970d7188eede9.entry.js"
       ]
     },
     "menu": {
@@ -32,7 +32,7 @@
         "/static/assets/9525.85df5053ee5081177b1a.entry.js",
         "/static/assets/5010.d3bf627dbc54f8409ade.entry.js",
         "/static/assets/4113.59ff0b3563a32f540c83.entry.js",
-        "/static/assets/3389.31f08a892343a11eff0b.entry.js",
+        "/static/assets/3389.6235c08c1d7b55cef57d.entry.js",
         "/static/assets/9152.6d23e158a6755b453006.entry.js",
         "/static/assets/6052.44323dd2c513d4dc4622.entry.js",
         "/static/assets/menu.661bf54972e9e4d1550d.entry.js"
@@ -57,7 +57,7 @@
         "/static/assets/9525.85df5053ee5081177b1a.entry.js",
         "/static/assets/5010.d3bf627dbc54f8409ade.entry.js",
         "/static/assets/4113.59ff0b3563a32f540c83.entry.js",
-        "/static/assets/3389.31f08a892343a11eff0b.entry.js",
+        "/static/assets/3389.6235c08c1d7b55cef57d.entry.js",
         "/static/assets/2569.b5ce249525f7a280ff80.entry.js",
         "/static/assets/9152.6d23e158a6755b453006.entry.js",
         "/static/assets/6052.44323dd2c513d4dc4622.entry.js",
@@ -81,7 +81,7 @@
         "/static/assets/9525.85df5053ee5081177b1a.entry.js",
         "/static/assets/5010.d3bf627dbc54f8409ade.entry.js",
         "/static/assets/4113.59ff0b3563a32f540c83.entry.js",
-        "/static/assets/3389.31f08a892343a11eff0b.entry.js",
+        "/static/assets/3389.6235c08c1d7b55cef57d.entry.js",
         "/static/assets/9152.6d23e158a6755b453006.entry.js",
         "/static/assets/embedded.77b1df78bb188af9a156.entry.js"
       ]
@@ -107,7 +107,7 @@
         "/static/assets/5289.1e6b1635c6c3a98b8a69.entry.js",
         "/static/assets/5175.77ee193cea6bf2d66ead.entry.js",
         "/static/assets/9312.0df6205234e087fe4342.entry.js",
-        "/static/assets/3389.31f08a892343a11eff0b.entry.js",
+        "/static/assets/3389.6235c08c1d7b55cef57d.entry.js",
         "/static/assets/2569.b5ce249525f7a280ff80.entry.js",
         "/static/assets/addSlice.057ca6bd5ae4d4d22f49.entry.js"
       ]
@@ -142,7 +142,7 @@
         "/static/assets/5289.1e6b1635c6c3a98b8a69.entry.js",
         "/static/assets/5175.77ee193cea6bf2d66ead.entry.js",
         "/static/assets/9312.0df6205234e087fe4342.entry.js",
-        "/static/assets/3389.31f08a892343a11eff0b.entry.js",
+        "/static/assets/3389.6235c08c1d7b55cef57d.entry.js",
         "/static/assets/2569.b5ce249525f7a280ff80.entry.js",
         "/static/assets/8274.5bf93bc5bb0c3962e10a.entry.js",
         "/static/assets/4489.48e286a18c22bf8c29a5.entry.js",

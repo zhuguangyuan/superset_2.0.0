@@ -41,6 +41,7 @@ export default function Option({
   isExtra,
   canDelete = true,
   isEnable = true,
+  needCheck = false,
 }: OptionProps) {
   const theme = useTheme();
   const onClickClose = useCallback(
@@ -69,15 +70,18 @@ export default function Option({
           <Icons.XSmall iconColor={theme.colors.grayscale.light1} />
         </CloseContainer>
       )}
-
-      <CheckContainer
-        role="button"
-        data-test="remove-control-button"
-        onClick={onClickCheck}
-      >
-        {isEnable ?  <Icons.CheckboxOn iconColor={theme.colors.warning.light1} />
-        : <Icons.CheckboxOff iconColor={theme.colors.warning.light1} />}
-      </CheckContainer>
+      {
+        needCheck ? (
+          <CheckContainer
+            role="button"
+            data-test="remove-control-button"
+            onClick={onClickCheck}
+          >
+            {isEnable ?  <Icons.CheckboxOn iconColor={theme.colors.warning.light1} />
+            : <Icons.CheckboxOff iconColor={theme.colors.warning.light1} />}
+          </CheckContainer>
+        ) : <></>
+      }
 
       <Label data-test="control-label">{children}</Label>
       {isExtra && (

@@ -33,6 +33,8 @@ export interface OptionProps {
   isExtra?: boolean;
   canDelete?: boolean;
   isEnable?: boolean;
+  // whether need a check box show on the panel
+  needCheck?: boolean;
 }
 
 export interface OptionItemInterface {
