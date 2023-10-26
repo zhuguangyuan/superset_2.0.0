@@ -189,6 +189,7 @@ export function DndColumnSelect(props: DndColumnSelectProps) {
       name,
       onChange,
       onClickClose,
+      onClickCheck,
       onShiftOptions,
       optionSelector,
       popoverOptions,

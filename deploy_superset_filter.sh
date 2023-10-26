@@ -1,7 +1,7 @@
 #!/bin/bash
 # superset服务，更新静态资源 
 # 将打包好的 static.tar.gz 文件解压并替换当前安装路径下的 static目录
-# 然后重启superset服务
+# 然后重启superset服务. 注意 conda 激活环境 需要测试是否成功 不成功则需手动重启superset服务
 
 # Step 1: copy the static.tar.gz to superset deployment machine
 echo "Step 1: Please confirm that path /tmp already has ./static.tar.gz file, if not, copy your static.tar.gz to there..."
@@ -41,10 +41,29 @@ tar -zxvf static.tar.gz
 
 # Step 6: Restart Superset service
 echo "Step 6: Restarting Superset service..."
+
+## Activate the 'superset' conda environment
+conda activate superset
+
+## Check if the activation was successful
+if [ $? -ne 0 ]; then
+  echo "Failed to activate the 'superset' environment."
+  exit 1
+fi
+
+## Kill the gunicorn processes
 ps -ef | awk '/gunicorn/ && !/awk/{print $2}' | xargs kill -9
-# conda can not activate in shell, run it manualy instead
-# conda activate superset
-# gunicorn -w 5 -t 120 -b 10.10.10.111:8089 "superset.app:create_app()" --daemon
-# conda deactivate
+
+## Check if the process termination was successful
+if [ $? -ne 0 ]; then
+  echo "Failed to kill the gunicorn processes."
+  exit 1
+fi
+
+## Start gunicorn
+gunicorn -w 5 -t 120 -b 10.10.10.111:8089 "superset.app:create_app()" --daemon
+
+## Deactivate the conda environment
+conda deactivate
 
 echo "Deployment completed successfully."

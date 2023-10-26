@@ -118,7 +118,8 @@ export default class AdhocFilter {
     }
     this.isExtra = !!adhocFilter.isExtra;
     this.isNew = !!adhocFilter.isNew;
-    this.isEnable = true;
+    this.isEnable =
+      adhocFilter.isEnable !== undefined ? adhocFilter.isEnable : true;
 
     this.filterOptionName =
       adhocFilter.filterOptionName ||

@@ -317,8 +317,9 @@ export const DndFilterSelect = (props: DndFilterSelectProps) => {
   }, [togglePopover]);
 
   const valuesRenderer = useCallback(
-    () =>
-      values.map((adhocFilter: AdhocFilter, index: number) => {
+    () => {
+      const needCheckBox = true;
+      return values.map((adhocFilter: AdhocFilter, index: number) => {
         const label = adhocFilter.getDefaultLabel();
         const tooltipTitle = adhocFilter.getTooltipTitle();
         return (
@@ -342,13 +343,15 @@ export const DndFilterSelect = (props: DndFilterSelectProps) => {
               withCaret
               isExtra={adhocFilter.isExtra}
               isEnable={adhocFilter.isEnable}
-              needCheck={!!label}
+              needCheck={needCheckBox}
             />
           </AdhocFilterPopoverTrigger>
         );
-      }),
+      })
+    },
     [
       onClickClose,
+      onClickCheck,
       onFilterEdit,
       onShiftOptions,
       options,
